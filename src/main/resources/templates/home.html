@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Car Rental System</title>
+    <style>
+  body {
+  background: url(https://funart.pro/uploads/posts/2021-04/1618593607_16-funart_pro-p-oboi-fon-fon-neitralnii-svetlii-16.jpg);
+  background-size: auto;
+   }
+   .overlay {
+    background: rgba(250, 222, 330, 0.8);
+    border-radius: 0.5px;
+   }
+    </style>
+    <style>
+    #block1{
+    backround-color: black;
+    opacity: 0.8;
+}
+</style>
+    <style>
+    #block2{
+    backround-color: black;
+    opacity: 0.8;
+}
+    </style>
+</head>
+<body>
+<header class="p-3 bg-dark text-white" id="block1">
+
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-3 justify-content-center mb-md-0">
+                <li><a href="home.html" class="nav-link px-4 text-white"><h5>Главная</h5></a></li>
+                <li><a href="car.html" class="nav-link px-4 text-white"><h5>Автопарк</h5></a></li>
+                <li><a href="#aboutUs" class="nav-link px-4 text-white"><h5>О нас</h5></a></li>
+                <li sec:authorize="isAuthenticated()">
+                    <a href="myOrder.html" class="nav-link px-4 text-white"><h5>Заказы</h5></a></li>
+                <li><a href="pay.html" class="nav-link px-4 text-white"><h5>Оплата</h5></a></li>
+            </ul>
+            <ul>
+
+                <form sec:authorize="isAuthenticated()" method="POST" th:action="@{/logout}">
+                    <input class="btn btn-dark" type="submit" value="Выйти"/>
+                </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <nav class="navbar-expand-sm text-center">
+        <div class="container-fluid">
+            <div class="row py-lg-5">
+                <div class="col-lg-6 col-md-8 mx-auto">
+                    <h1 class="fw-dark">Car Rental Company</h1>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="card bg-dark text-white">
+        <img class="card-img" src="https://rentme.com.ua/wp-content/uploads/2017/02/arenda-avto-kharkov-min.jpg"
+             alt="Card image">
+        <div class="card-img-overlay">
+            <dfn><h2 class="card-title">Прокат авто в городе Могилёв</h2></dfn>
+            <dfn><h5 class="card-text">Всегда Вам рады в любое время суток!</h5></dfn>
+        </div>
+    </div>
+    <section align="justify"
+             class="elementor-section elementor-top-section elementor-element elementor-element-d8b29d0 elementor-section-boxed elementor-section-height-default elementor-section-height-default overlay"
+             data-id="d8b29d0" data-element_type="section">
+        <a name="aboutUs"></a>
+        <div class="elementor-container elementor-column-gap-default">
+            <div class="elementor-row">
+                <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8080c62"
+                     data-id="8080c62" data-element_type="column">
+                    <div class="elementor-column-wrap elementor-element-populated">
+                        <div class="elementor-widget-wrap">
+                            <div class="elementor-element elementor-element-2b8469f elementor-widget elementor-widget-heading"
+                                 data-id="2b8469f" data-element_type="widget" data-widget_type="heading.default">
+                                <div class="elementor-widget-container">
+                                    <dfn><h2 style="font-size:2vw;" class="elementor-heading-title elementor-size-default">
+                                        Прокат автомобилей в городе Могилёв.</h2>
+                                    <h2>Мы дарим комфорт нашим клиентам!</h2></dfn>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col align-self-start">
+                <dfn><p><strong>Преимущества проката автомобиля:</strong></p></dfn>
+                <ul><dfn>
+                    <li>Аренда автомобиля позволяет путешествовать с комфортом.
+                    </li>
+                    <li>Не нужно тратить много времени на дорогу,
+                        нервничать на трассе, водить ночью и страдать от недосыпа.
+                    </li>
+                    <li>Вы можете прибыть в город на самолете или поезде и сразу же пересесть за руль арендуемого
+                        автомобиля.
+                        С данным запросом Вы можете обратиться к нашей компании.
+                    </li>
+                    <li>
+                        Взяв машину напрокат в Могилеве, вы сможете быстро осмотреть достопримечательности.
+                        За день вы сможете объехать исторический центр, побывать в церквях и музеях,
+                        осмотреть скульптуры и мемориалы.
+                    </li>
+                    </dfn>
+                </ul>
+            </div>
+            <div class="col align-self-center">
+                <dfn><p><strong>Мы предлагаем аренду легковых авто:</strong></p></dfn>
+                <ul><dfn>
+                    <li>эконом,
+                    </li>
+                    <li>бизнес,
+                    </li>
+                    <li>премиум класса,
+                    </li>
+                    <li>минивэны и внедорожники.
+                    </li>
+                    </dfn>
+                </ul>
+            </div>
+            <div class="col align-self-end">
+                <dfn><p><strong>В нашем автопарке представлены лидеры мирового автопрома:</strong></p></dfn>
+                <ul><dfn>
+                    <li> Mercedes.
+                    </li>
+                    <li>Ford.
+                    </li>
+                    <li>Volkswagen.
+                    </li>
+                    <li>Renault.
+                    </li>
+                    <li>Nissan.
+                    </li>
+                    <li>Skoda.
+                    </li>
+                    </dfn>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-start">
+            <div class="col-4">
+                <dfn><p><strong>Преимущества компании</strong></dfn>
+                <ul><dfn>
+                    <li>Большой стаж работы: компания работает в РБ с 1993 года.</li>
+                    <li> Мы гарантируем исправную работу механизмов, полный бака бензина, идеальное состояние салона.
+                    </li>
+                    <li>Гибкие сроки аренды: от суток до года.</li>
+                    <li>Круглосуточная техническая поддержка для клиентов.</li>
+                    <li>Принимаем оплату: Банковской картой Visa или MasterCard, наличными деньгами, безналичным
+                        платежом, международным переводом.
+                    </li>
+                    <li>Предоставим по запросу дополнительное оборудование: Wi-Fi, навигатор, детское кресло для авто.
+                    </li>
+                    </dfn>
+                </ul>
+            </div>
+            <div class="col-4">
+                <dfn><p><strong>Как взять автомобиль напрокат в Могилёве</strong></p></dfn>
+                <ul><dfn>
+                    <li>Для проката авто в Могилеве нужно заключить официальный договор.</li>
+                    <li>Компания сдает авто напрокат клиентам:
+                        старше 21 года (либо от 25 лет – при аренде определенных автомобилей).
+                    </li>
+                    <li>Минимальный водительский стаж 1 год и 3 года соответственно.
+                        Для заключения договора нужны паспорт и водительское удостоверение.
+                    </li>
+                    <li>Оставьте заявку на сайте или по телефону +375 (44) 712-24-45, чтобы забронировать понравившуюся
+                        модель. Вскоре вам перезвонит менеджер, чтобы уточнить условия проката и заключить договор.
+                    </li>
+                    </dfn>
+                </ul>
+            </div>
+
+</main>
+<p></p>
+
+<div class="container">
+    <div class="row justify-content-start">
+        <p align="right"><span><strong>Адрес:</strong> г.Могилёв</span></p>
+        <p align="right"><span><strong>Время работы:</strong> 09:00-18:00</span></p>
+        <p align="right"><span><strong>Телефон(круглосуточно):</strong>+375 (29) 669-73-11</span><br>
+        <p align="right"><span><strong>© Автопрокат</strong> CompanyName</span></p>
+    </div>
+</div>
+</div>
+</div>
+</ul>
+</div>
+</div>
+</footer>
+</div>
+</body>
+</html>
